@@ -1,0 +1,86 @@
+EXTERN STU:BYTE
+EXTERN MENU:NEAR
+PUBLIC SUB3
+.386
+STACK3  SEGMENT  USE16  PARA STACK 'STACK'
+       DB  256  DUP(0)
+STACK3  ENDS
+
+DATA   SEGMENT USE16 PARA PUBLIC 'D1'
+N EQU 5
+SPUT3	DB 0AH,0DH,0AH,0DH,6 DUP(0),'This is SUB3.:Rank!',0AH,0DH,'$'
+PUT6	DB	0AH,0DH,6 DUP(0),'Enter succeed!plause any key to the menu',0AH,0DH,6 DUP(0),'$'
+
+DATA	ENDS
+
+CODE SEGMENT USE16 PARA PUBLIC 'C1'
+	ASSUME DS:DATA,CS:CODE,SS:STACK3
+SUB3 PROC
+IO		MACRO A,B
+		LEA DX,A
+		MOV AH,B
+		INT 21H
+		ENDM
+
+	;计算排名
+		MOV AX,0003H;清屏
+		INT 10H
+		IO SPUT3,9;输出提示符
+		
+       CALL RANK
+
+
+
+
+		;任意键退出
+		IO PUT6,9
+		IO PUT6,1
+		JMP MENU
+
+		RET
+SUB3 ENDP
+RANK PROC NEAR
+	    PUSH AX
+		PUSH BX
+		PUSH CX
+		PUSH DX
+		PUSH SI
+		PUSH DI
+
+       LEA BX,STU
+       MOV SI,13
+       MOV CX,N 
+FIRST_loop:     
+	   MOV DH,1
+	   MOV DI,13
+	   MOV AH,DS:[BX + SI]
+	   PUSH CX
+	   MOV CX,N 
+SECOND_loop:
+	   PUSH AX
+       SUB AH, BYTE PTR DS:[DI + BX]
+       JS _ONE_
+_TWO_:       
+	   POP AX
+       ADD DI,16
+       LOOP SECOND_loop
+       MOV [BX + SI + 1],DH
+       ADD SI,16
+       POP CX
+       LOOP FIRST_loop
+
+		POP DI
+		POP SI
+		POP DX
+		POP CX
+		POP BX
+		POP AX
+       RET 
+
+_ONE_:
+	   INC DH
+	   JMP _TWO_
+
+RANK ENDP
+CODE ENDS
+	END

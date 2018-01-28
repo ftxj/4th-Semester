@@ -1,0 +1,66 @@
+                            | #######################################################################
+                            | # Xin jie
+                            | #######################################################################
+0x000:                      |     .pos 0
+0x000:                      | main:
+0x000: 30f40005000000000000 |     irmovq Stack, %rsp
+0x00a: 30f50005000000000000 |     irmovq Stack, %rbp
+0x014: 30f00800000000000000 |     irmovq $8, %rax
+0x01e: 6104                 |     subq %rax, %rsp
+0x020: 30f09800000000000000 |     irmovq ele1, %rax
+0x02a: 40040000000000000000 |     rmmovq %rax, (%rsp)
+                            | 
+0x034: 804a00000000000000   |     call sum_list
+0x03d: 30f30000000000000000 |     irmovq $0, %rbx
+0x047: 2003                 |     rrmovq %rax, %rbx
+0x049: 00                   |     halt
+                            | 
+                            | #################################
+                            | #long sum_list(list_ptr ls)
+                            | #{
+                            | #   long val = 0;
+                            | #   while (ls) {
+                            | #       val += ls->val;
+                            | #        ls = ls->next;
+                            | #   }
+                            | #   return val;
+                            | #}
+                            | #################################
+                            | 
+0x04a:                      | sum_list:
+0x04a: a03f                 |     pushq %rbx
+0x04c: a02f                 |     pushq %rdx
+0x04e: 30f00000000000000000 |     irmovq $0, %rax
+0x058: 50240800000000000000 |     mrmovq 8(%rsp), %rdx
+0x062:                      | loop:
+0x062: 6222                 |     andq %rdx, %rdx
+0x064: 738c00000000000000   |     je END
+0x06d: 50320000000000000000 |     mrmovq (%rdx), %rbx
+0x077: 6030                 |     addq %rbx, %rax
+0x079: 50220800000000000000 |     mrmovq 8(%rdx), %rdx
+0x083: 706200000000000000   |     jmp loop
+0x08c:                      | END:
+0x08c: b02f                 |     popq %rdx
+0x08e: b03f                 |     popq %rbx
+0x090: 90                   |     ret 
+                            | 
+                            | 
+                            | 
+                            | 
+                            | # Sample linked list
+0x098:                      |     .align 8
+0x098:                      | ele1:
+0x098: 0a00000000000000     |     .quad 0x00a
+0x0a0: a800000000000000     |     .quad ele2
+0x0a8:                      | ele2:
+0x0a8: b000000000000000     |     .quad 0x0b0
+0x0b0: b800000000000000     |     .quad ele3
+                            | 
+0x0b8:                      | ele3:
+0x0b8: 000c000000000000     |     .quad 0xc00
+0x0c0: 0000000000000000     |     .quad 0
+                            | 
+0x0c8:                      | .align 8
+                            | # Run time stack
+0x500:                      |     .pos 0x500
+0x500:                      | Stack:

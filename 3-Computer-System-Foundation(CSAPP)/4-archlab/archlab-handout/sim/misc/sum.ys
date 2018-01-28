@@ -1,0 +1,66 @@
+#######################################################################
+# Xin jie
+#######################################################################
+    .pos 0
+main:
+    irmovq Stack, %rsp
+    irmovq Stack, %rbp
+    irmovq $8, %rax
+    subq %rax, %rsp
+    irmovq ele1, %rax
+    rmmovq %rax, (%rsp)
+
+    call sum_list
+    irmovq $0, %rbx
+    rrmovq %rax, %rbx
+    halt
+
+#################################
+#long sum_list(list_ptr ls)
+#{
+#   long val = 0;
+#   while (ls) {
+#       val += ls->val;
+#        ls = ls->next;
+#   }
+#   return val;
+#}
+#################################
+
+sum_list:
+    pushq %rbx
+    pushq %rdx
+    irmovq $0, %rax
+    mrmovq 8(%rsp), %rdx
+loop:
+    andq %rdx, %rdx
+    je END
+    mrmovq (%rdx), %rbx
+    addq %rbx, %rax
+    mrmovq 8(%rdx), %rdx
+    jmp loop
+END:
+    popq %rdx
+    popq %rbx
+    ret 
+
+
+
+
+# Sample linked list
+    .align 8
+ele1:
+    .quad 0x00a
+    .quad ele2
+ele2:
+    .quad 0x0b0
+    .quad ele3
+
+ele3:
+    .quad 0xc00
+    .quad 0
+
+.align 8
+# Run time stack
+    .pos 0x500
+Stack:

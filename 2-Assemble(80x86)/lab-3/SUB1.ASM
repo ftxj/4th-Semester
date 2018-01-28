@@ -1,0 +1,187 @@
+EXTERN STU:BYTE
+EXTERN MENU:NEAR
+PUBLIC SUB1
+
+.386
+STACK1  SEGMENT  USE16  PARA STACK 'STACK'
+       DB  256  DUP(0)
+STACK1  ENDS
+
+DATA   SEGMENT USE16 PARA PUBLIC 'D1'
+T EQU 16
+SPUT1	DB 	0AH,0DH,0AH,0DH,6 DUP(0),'This is SUB1:Logging!',0AH,0DH,6 DUP(0),'Please enter the serail number of the student want to modify:(Only 1-5!)',0AH,0DH,6 DUP(0),'$'
+SP1_1	DB	0AH,0DH,6 DUP(0),'INPUT ERROR!Please input again:',0AH,0DH,6 DUP(0),'$'
+SP1_2	DB	0AH,0DH,6 DUP(0),'Please enter the name of student',0AH,0DH,6 DUP(0),'$'
+SP1_3	DB	0AH,0DH,6 DUP(0),'Please enter the Chinese grade(Only 0-100)',0AH,0DH,6 DUP(0),'$'
+SP1_4	DB	0AH,0DH,6 DUP(0),'Please enter the Math grade(Only 0-100)',0AH,0DH,6 DUP(0),'$'
+SP1_5	DB	0AH,0DH,6 DUP(0),'Please enter the English grade(Only 0-100)',0AH,0DH,6 DUP(0),'$'
+SP1_6	DB	0AH,0DH,6 DUP(0),'Enter succeed!plause any key to the menu',0AH,0DH,6 DUP(0),'$'
+IN_PUT	DB	11;Input buffer memory area
+COUNT	DB ?;the length of input
+		DB  11 DUP(0);the content of input
+DATA	ENDS
+
+CODE SEGMENT USE16 PARA PUBLIC 'C1'
+	ASSUME DS:DATA,CS:CODE,SS:STACK1
+SUB1 PROC
+IO		MACRO A,B
+		LEA DX,A
+		MOV AH,B
+		INT 21H
+		ENDM
+
+		MOV AX,0003H;清屏
+		INT 10H
+		IO SPUT1,9;输出提示符
+S1_1:	IO SPUT1,1;输入选择->AL!!!
+		MOV AH,0
+		PUSH AX
+		CMP AL,'1';序号合法
+		JB	S1ERR
+		CMP AL,'5'
+		JA 	S1ERR
+S1_2:	IO SP1_2,9;输出提示姓名
+		IO IN_PUT,10;输入学生姓名
+		LEA BX,IN_PUT;输入为回车则重新提示输入
+		MOVZX AX,BYTE PTR DS:[BX+1]
+		CMP AX,0
+		JE	S1_2
+		ADD BX,AX
+S1_3:	CMP AX,10;空白置零
+		JNB S1_4
+		INC AX
+		MOV BYTE PTR DS:[BX+2],0
+		INC BX
+		
+		JMP S1_3
+S1_4:;字符串移动	
+		POP AX
+		SUB AX,31H
+		MOV DL,16
+		MUL DL
+		LEA DI,STU
+		ADD DI,AX
+		LEA SI,IN_PUT
+		ADD SI,2
+		MOV CX,10
+		CLD
+		REP MOVSB
+
+		;输入学生语文成绩
+S1_5:	IO SP1_3,9
+		IO IN_PUT,10
+		LEA BX,COUNT
+		MOVZX AX,BYTE PTR DS:[BX]
+		CMP AX,4;输入合法
+		JAE	S1_5
+		CMP AX,3
+		JNE S1_6
+		MOV EAX,DWORD PTR 1[BX]
+		CMP EAX,0D303031H
+		JNE S1_5
+		MOV BYTE PTR [DI],100
+		INC DI
+		JMP S1_7
+
+S1_6:	
+		CMP AX,2
+		JNE S1_61
+		MOV AX,WORD PTR 1[BX]
+		MOV DL,AH
+		MOV DH,10
+		AND AX,0FFH
+		SUB AX,30H
+		MUL DH
+		MOV DH,0
+		SUB DX,30H
+		ADD AX,DX
+		MOV BYTE PTR [DI],AL
+		INC DI
+		JMP S1_7
+S1_61:	MOVZX AX,BYTE PTR 1[BX]
+		SUB AX,30H
+		MOV BYTE PTR [DI],AL
+		INC DI
+
+		;输入学生数学成绩
+S1_7:	IO SP1_4,9
+		IO IN_PUT,10
+		LEA BX,COUNT
+		MOVZX AX,BYTE PTR DS:[BX]
+		CMP AX,4;输入合法
+		JAE	S1_7
+		CMP AX,3
+		JNE S1_8
+		MOV EAX,DWORD PTR 1[BX]
+		CMP EAX,0D303031H
+		JNE S1_7
+		MOV BYTE PTR [DI],100
+		INC DI
+		JMP S1_9
+
+S1_8:	CMP AX,2
+		JNE S2_61
+		MOV AX,WORD PTR 1[BX]
+		MOV DL,AH
+		MOV DH,10
+		AND AX,0FFH
+		SUB AX,30H
+		MUL DH
+		MOV DH,0
+		SUB DX,30H
+		ADD AX,DX
+		MOV BYTE PTR [DI],AL
+		INC DI
+		JMP S1_9
+S2_61:	MOVZX AX,BYTE PTR 1[BX]
+		SUB AX,30H
+		MOV BYTE PTR [DI],AL
+		INC DI
+
+		;输入学生英语成绩
+S1_9:	IO SP1_5,9
+		IO IN_PUT,10
+		LEA BX,COUNT
+		MOVZX AX,BYTE PTR DS:[BX]
+		CMP AX,4;输入合法
+		JAE	S1_9
+		CMP AX,3
+		JNE S1_10
+		MOV EAX,DWORD PTR 1[BX]
+		CMP EAX,0D303031H
+		JNE S1_9
+		MOV BYTE PTR [DI],100
+		INC DI
+		JMP S1_11
+
+S1_10:	CMP AX,2
+		JNE S3_61
+		MOV AX,WORD PTR 1[BX]
+		MOV DL,AH
+		MOV DH,10
+		AND AX,0FFH
+		SUB AX,30H
+		MUL DH
+		MOV DH,0
+		SUB DX,30H
+		ADD AX,DX
+		MOV BYTE PTR [DI],AL
+		INC DI
+		JMP S1_11
+S3_61:	MOVZX AX,BYTE PTR 1[BX]
+		SUB AX,30H
+		MOV BYTE PTR [DI],AL
+		INC DI
+
+S1_11:	IO SP1_6,9
+		IO SP1_6,1
+
+
+
+		JMP MENU
+S1ERR:	IO SP1_1,9
+		JMP S1_1
+		RET
+SUB1 ENDP
+CODE ENDS
+	END

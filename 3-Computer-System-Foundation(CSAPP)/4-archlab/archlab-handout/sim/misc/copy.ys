@@ -1,0 +1,32 @@
+long copy_block(long *src, long *dest, long len)
+{
+    long result = 0;
+    while (len > 0) {
+	long val = *src++;
+	*dest++ = val;
+	result ^= val;
+	len--;
+    }
+    return result;
+}
+
+
+.pos 0
+irmovq Stack, %rsp
+irmovq Stack, %rbp
+irmovq $24, %rax
+subq %rax, %rsp
+irmovq src, %rax
+
+
+.align 8
+# Source block
+src:
+    .quad 0x00a
+    .quad 0x0b0
+    .quad 0xc00
+# Destination
+dest:
+    .quad 0x111
+    .quad 0x222
+    .quad 0x333

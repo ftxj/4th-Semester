@@ -1,0 +1,1 @@
+./dlc bits.c && make > /dev/null && ./btest | grep -A 2 -m 1 ERROR

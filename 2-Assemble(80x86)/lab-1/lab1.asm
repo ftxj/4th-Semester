@@ -1,0 +1,188 @@
+;.386
+STACK SEGMENT ;USE16 STACK
+	DB 300 DUP(0)
+STACK ENDS
+
+DATA SEGMENT; USE16
+N 	    EQU  30
+POIN    DW   0
+
+BUF 	DB  'zhangsan', 0, 0 
+		DB   100, 85, 80, ?
+	    DB  'lisi', 6  DUP(0)
+		DB   80, 100, 70, ?
+		DB  'B',0,0,0,0,0,0,0,0,0
+		DB   10, 20, 12, ?
+		DB   N-4  DUP('TempValue',0, 80, 90, 95, ?) 
+	    DB  'xinjie', 0, 0, 0, 0    
+		DB   100, 100, 100, ?
+
+IN_NAME DB   11
+		DB   0 
+		DB   11 DUP(0)
+
+CRLF    DB    0DH, 0AH, '$'
+MSG1 	DB 	 0AH, 0DH, 'Please Input Your Name :$'
+MSG2    DB   0AH, 0DH, 'Not Find This Student!:$'
+MSGA 	DB   0AH, 0DH, 'A!$'
+MSGB 	DB   0AH, 0DH, 'B!$'
+MSGC 	DB   0AH, 0DH, 'C!$'
+MSGD 	DB   0AH, 0DH, 'D!$'
+DATA ENDS
+
+CODE SEGMENT ;USE16
+	 ASSUME DS:DATA, CS:CODE, SS:STACK
+START:
+	 MOV AX, DATA
+	 MOV DS, AX
+	 CALL SET_AVERANGE_GRADE
+
+INPUT:
+	 MOV DX, OFFSET MSG1
+	 MOV AH, 9
+	 INT 21H ;功能一一小题
+
+	 LEA DX, IN_NAME
+	 MOV AH, 10
+	 INT 21H ;功能一二小题
+
+	 MOV BL, IN_NAME + 1
+	 MOV BH, IN_NAME + 2
+
+	 CMP BL, 0
+	 JE INPUT
+	 CMP BH, 'q'
+	 JE DIE ;功能一 三小题
+	 MOV BH, 0
+
+FIND:
+	 MOV CX, N
+	 MOV DI, 0
+FIND_S:
+	 MOV SI, 0
+	 PUSH CX
+	 MOV CX, BX
+	 CALL EQUAL
+	 POP CX
+	 CMP SI, BX
+	 JE SUCCESS_FIND
+CONTINUE_FIND:
+	 CMP CX, 1
+	 JE NOT_FIND
+ 	 ADD DI, 14
+	 LOOP FIND_S
+
+DIE:
+	 MOV AH, 4CH
+	 INT 21H
+
+NOT_FIND:
+	 MOV DX, OFFSET MSG2
+	 MOV AH, 9
+	 INT 21H 
+	 JMP INPUT
+
+SUCCESS_FIND:
+	 ADD SI, DI
+	 CMP [BUF + SI], 0
+	 JNE CONTINUE_FIND
+	 SUB SI, DI
+	 MOV WORD PTR [POIN], OFFSET BUF + 10 
+	 ADD WORD PTR [POIN], DI
+	 CALL G_ABCD
+	 JMP INPUT
+
+;使用寄存器 AX,SI
+;需要传入参数 SI = 0
+EQUAL:
+	 MOV AL, [IN_NAME + SI + 2]
+	 ADD SI, DI
+	 CMP AL, [BUF + SI]
+	 JNE NOT_EQUAL 
+	 SUB SI, DI
+	 INC SI
+	 LOOP EQUAL
+NOT_EQUAL:	 
+	 RET
+
+G_ABCD:
+	 PUSH AX
+	 PUSH DX
+	 PUSH SI
+	 MOV DX, OFFSET CRLF
+	 MOV AH, 9
+	 INT 21H
+	 MOV SI, [POIN]
+	 ADD SI, 3
+	 MOV AX, [SI]
+	 MOV AH, 0
+	 SUB AL, 90
+	 JS  G_BCD
+	 MOV DL, 'A'
+	 JMP SCREEN
+G_BCD:
+	 MOV AX, [SI]
+	 MOV AH, 0
+	 SUB AL, 80
+	 JS  G_CD
+	 MOV DL, 'B'
+	 JMP SCREEN
+G_CD:
+	 MOV AX, [SI]
+	 MOV AH, 0
+	 SUB AL, 70
+	 JS  G_D
+	 MOV DL, 'C'
+	 JMP SCREEN
+G_D:
+	 MOV DL, 'D'
+	 JMP SCREEN
+SCREEN:
+	 MOV AH, 2
+	 INT 21H
+	 POP SI
+	 POP DX
+	 POP AX
+	 RET 
+
+SET_AVERANGE_GRADE:
+	 PUSH SI
+	 PUSH AX
+	 PUSH BX
+	 PUSH CX
+	 PUSH DX
+
+	 MOV SI, 10
+	 MOV CX, N
+MATH:
+	 MOV AX, 0
+	 MOV BX, 0
+	 MOV DX, 0
+	 MOV AL, [BUF + SI]
+	 MOV AH, 2
+	 MUL AH ;AX IS CHINESE * 2 <= 200 16 IS ENOUGH
+	 MOV BL, [BUF + SI + 1] ;MATH GRADE
+	 MOV BH, 0
+	 ADD BX, AX
+	 MOV AL, [BUF + SI + 2] ;ENGLISH
+	 MOV AH, 0
+	 MOV DL, 2
+	 DIV DL
+	 ADD BX, AX
+	 MOV AX, 2
+	 MUL BX
+	 MOV BL, 7
+	 DIV BL
+	 MOV [BUF + SI + 3], AL
+	 ADD SI, 14
+	 LOOP MATH
+
+	 POP DX
+	 POP CX
+	 POP BX
+	 POP AX
+	 POP SI
+	 RET 
+
+CODE ENDS
+	 END START

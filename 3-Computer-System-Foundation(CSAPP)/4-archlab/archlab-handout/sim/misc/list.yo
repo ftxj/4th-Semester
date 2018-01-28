@@ -1,0 +1,49 @@
+0x000:                      |     .pos 0
+0x000: 30f40001000000000000 | irmovq Stack, %rsp
+0x00a: 30f50001000000000000 | irmovq Stack, %rbp
+0x014: 30f00800000000000000 | irmovq $8, %rax
+0x01e: 6104                 | subq %rax, %rsp
+0x020: 30f0a800000000000000 | irmovq ele1, %rax
+0x02a: 40040000000000000000 | rmmovq %rax, (%rsp)
+0x034: 803f00000000000000   | call rsum_list
+0x03d: 90                   | ret
+0x03e: 00                   | halt
+                            | 
+                            | ########################
+                            | # 
+                            | ########################
+0x03f:                      | rsum_list:
+0x03f: a03f                 |     pushq %rbx
+0x041: 30f30800000000000000 |     irmovq $8, %rbx
+0x04b: 6134                 |     subq %rbx, %rsp
+0x04d: 50341800000000000000 |     mrmovq 24(%rsp), %rbx
+0x057: 30f00000000000000000 |     irmovq $0, %rax
+0x061: 6233                 |     andq %rbx, %rbx
+0x063: 739500000000000000   |     je End
+0x06c: 50030800000000000000 |     mrmovq 8(%rbx), %rax
+0x076: 40040000000000000000 |     rmmovq %rax, (%rsp)
+0x080: 803f00000000000000   |     call rsum_list
+0x089: 50330000000000000000 |     mrmovq (%rbx), %rbx
+0x093: 6033                 |     addq %rbx, %rbx
+0x095:                      | End:
+0x095: 30f30800000000000000 |     irmovq $8, %rbx
+0x09f: 6034                 |     addq %rbx, %rsp
+0x0a1: b03f                 |     popq %rbx
+0x0a3: 90                   |     ret
+                            | 
+                            | 
+                            | 
+                            | # Sample linked list
+0x0a8:                      |     .align 8
+0x0a8:                      | ele1:
+0x0a8: 0a00000000000000     |     .quad 0x00a
+0x0b0: b800000000000000     |     .quad ele2
+0x0b8:                      | ele2:
+0x0b8: b000000000000000     |     .quad 0x0b0
+0x0c0: c800000000000000     |     .quad ele3
+0x0c8:                      | ele3:
+0x0c8: 000c000000000000     |     .quad 0xc00
+0x0d0: 0000000000000000     |     .quad 0
+                            | 
+0x100:                      | .pos 0x100
+0x100:                      |     Stack:

@@ -1,0 +1,7 @@
+1c2:	b8 d6 8c 04 08       	mov    $0x8048cd6,%eax
+ 1c7:	89 e5                	mov    %esp,%ebp
+
+ 1c9:	83 c5 30             	add    $0x30,%ebp
+ 1cc:	50                   	push   %eax
+ 1cd:	b8 86 db c5 16       	mov    $0x16c5db86,%eax
+ 1d2:	c3                   	ret    

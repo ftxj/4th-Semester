@@ -1,0 +1,1 @@
+./bddcheck/check.pl | grep -A 3 -m 1 Mismatch

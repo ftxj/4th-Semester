@@ -1,0 +1,49 @@
+    .pos 0
+irmovq Stack, %rsp
+irmovq Stack, %rbp
+irmovq $8, %rax
+subq %rax, %rsp
+irmovq ele1, %rax
+rmmovq %rax, (%rsp)
+call rsum_list
+ret
+halt
+
+########################
+# 
+########################
+rsum_list:
+    pushq %rbx
+    irmovq $8, %rbx
+    subq %rbx, %rsp
+    mrmovq 24(%rsp), %rbx
+    irmovq $0, %rax
+    andq %rbx, %rbx
+    je End
+    mrmovq 8(%rbx), %rax
+    rmmovq %rax, (%rsp)
+    call rsum_list
+    mrmovq (%rbx), %rbx
+    addq %rbx, %rbx
+End:
+    irmovq $8, %rbx
+    addq %rbx, %rsp
+    popq %rbx
+    ret
+
+
+
+# Sample linked list
+    .align 8
+ele1:
+    .quad 0x00a
+    .quad ele2
+ele2:
+    .quad 0x0b0
+    .quad ele3
+ele3:
+    .quad 0xc00
+    .quad 0
+
+.pos 0x100
+    Stack:

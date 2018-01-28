@@ -1,0 +1,28 @@
+***********************
+The CS:APP Data Lab
+Lite Directions 
+***********************
+
+0. Your goal is to modify your copy of bits.c so that it passes all the
+tests without violating any of the coding guidelines.
+
+1. What you should do 
+    a. read the instructions in bits.c carefully.
+    b. implement the first few functions.
+    c. run ./check
+        i.   if you break the coding rules, you will see warnings beginning with "dlc"
+        ii.  if the build process failed, errors/warnings will be reported.
+        iii. if your function fails to pass a testcase, you may see 
+            "ERROR: test f(A, B, ...) failed. 
+            Given RESULT_YOURS, should be RESULT_STANDARD"
+            where f is the first failing function,
+            [A, B, ...] is the arguments used to call the function,
+            RESULT_YOURS is the result returned by YOUR implementation
+            and RESULT_STANDARD is the correct one.
+        iv. if there's no bug in your implementation, 
+                then you may see ERROR of the NEXT function. JUST KEEP GOING!
+    d. if all is done, feel free to try ./finalreport
+        Final report tests your implementation exhaustively, rather than using only a number of test cases.
+	If check fails to spot your bug that finalreport finds, run ./strictcheck to see a counterexample.
+    e. there are 2 (useless) helper functions. refer to original-README for details.
+2. ENJOY IT!
