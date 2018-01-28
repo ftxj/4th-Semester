@@ -1,0 +1,27 @@
+module pattern(code ,patt);
+    input [3:0]code;
+    output reg [7:0]patt;
+    
+    always @(code)
+    begin
+          case(code)
+        0:patt[7:0]= 8'b11000000;
+        1:patt[7:0] = 8'b11111001;
+        2:patt[7:0] = 8'b10100100;
+        3:patt[7:0] = 8'b10110000;
+        4:patt[7:0] = 8'b10011001;
+        5:patt[7:0] = 8'b10010010;
+        6:patt[7:0] = 8'b10000010;
+        7:patt[7:0] = 8'b11111000;
+        8:patt[7:0] = 8'b10000000;
+        9:patt[7:0] = 8'b10011000;
+        10:patt[7:0] = 8'b10001000;
+        11:patt[7:0] = 8'b10000011;
+        12:patt[7:0] = 8'b11000110;
+        13:patt[7:0] = 8'b10100001;
+        14:patt[7:0] = 8'b10000110;
+        default:patt[7:0] = 8'b10001110;
+        endcase
+    end    
+    
+endmodule

@@ -1,0 +1,24 @@
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/softwarehub/vivado/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 73bdf68ab9584d669c248fe4360407ef --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Topest_tb_behav xil_defaultlib.Topest_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Divider
+Compiling module xil_defaultlib.Decoder_28_32
+Compiling module xil_defaultlib.pattern
+Compiling module xil_defaultlib.Show_Number
+Compiling module xil_defaultlib.Fsm_controller
+Compiling module xil_defaultlib.Adder(WIDTH=32)
+Compiling module xil_defaultlib.Selector(WIDTH=32)
+Compiling module xil_defaultlib.Latch(WIDTH=32)
+Compiling module xil_defaultlib.Memory(WIDTH=32)
+Compiling module xil_defaultlib.Comparator(WIDTH=32)
+Compiling module xil_defaultlib.Datapath_top
+Compiling module xil_defaultlib.Topest
+Compiling module xil_defaultlib.Topest_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Topest_tb_behav

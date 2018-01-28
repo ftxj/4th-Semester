@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jun 22 20:20:33 2017
+# Process ID: 9168
+# Current directory: C:/Document/vivado各次试验/project_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7036 C:\Document\vivado各次试验\project_3\project_3.xpr
+# Log file: C:/Document/vivado各次试验/project_3/vivado.log
+# Journal file: C:/Document/vivado各次试验/project_3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Document/vivado各次试验/project_3/project_3.xpr
+INFO: [Project 1-313] Project file moved from 'F:/OneDrive/VivadoProject/project_3' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 828.594 ; gain = 114.625
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun 22 20:27:55 2017] Launched synth_1...
+Run output will be captured here: C:/Document/vivado各次试验/project_3/project_3.runs/synth_1/runme.log
+[Thu Jun 22 20:27:55 2017] Launched impl_1...
+Run output will be captured here: C:/Document/vivado各次试验/project_3/project_3.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Jun 22 20:28:33 2017] Launched synth_1...
+Run output will be captured here: C:/Document/vivado各次试验/project_3/project_3.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 22 20:36:26 2017...

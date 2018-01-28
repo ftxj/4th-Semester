@@ -1,0 +1,401 @@
+
+*** Running vivado
+    with args -log Topest.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Topest.tcl
+
+
+****** Vivado v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source Topest.tcl -notrace
+Command: synth_design -top Topest -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13108 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 347.848 ; gain = 82.465
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Topest' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Topest.v:23]
+INFO: [Synth 8-638] synthesizing module 'Show_Number' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:23]
+INFO: [Synth 8-638] synthesizing module 'Divider' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Divider.v:23]
+	Parameter frequency_before bound to: 100000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Divider' (1#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Divider.v:23]
+INFO: [Synth 8-638] synthesizing module 'Decoder_28_32' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Decoder_28_32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_28_32' (2#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Decoder_28_32.v:23]
+INFO: [Synth 8-638] synthesizing module 'pattern' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/pattern.v:23]
+INFO: [Synth 8-256] done synthesizing module 'pattern' (3#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/pattern.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Show_Number' (4#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:23]
+INFO: [Synth 8-638] synthesizing module 'Fsm_controller' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:23]
+	Parameter START bound to: 4'b1000 
+	Parameter COMPUTE_SUM bound to: 4'b0100 
+	Parameter GET_NEXT bound to: 4'b0010 
+	Parameter DONE bound to: 4'b0001 
+INFO: [Synth 8-155] case statement is not full and has no default [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:50]
+INFO: [Synth 8-256] done synthesizing module 'Fsm_controller' (5#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:23]
+INFO: [Synth 8-638] synthesizing module 'Datapath_top' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Datapath_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'Adder' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Adder.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Adder' (6#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-638] synthesizing module 'Selector' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Selector.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Selector' (7#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Selector.v:23]
+INFO: [Synth 8-638] synthesizing module 'Latch' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Latch.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Latch' (8#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Latch.v:23]
+INFO: [Synth 8-638] synthesizing module 'Memory' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Memory.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Memory' (9#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'Comparator' [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Comparator.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Comparator' (10#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Comparator.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Datapath_top' (11#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Datapath_top.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Topest' (12#1) [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Topest.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 386.926 ; gain = 121.543
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 386.926 ; gain = 121.543
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [F:/OneDrive/VivadoProject/project_4/project_4.srcs/constrs_1/imports/VivadoProject/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [F:/OneDrive/VivadoProject/project_4/project_4.srcs/constrs_1/imports/VivadoProject/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/OneDrive/VivadoProject/project_4/project_4.srcs/constrs_1/imports/VivadoProject/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Topest_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Topest_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 692.355 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 692.355 ; gain = 426.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 692.355 ; gain = 426.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 692.355 ; gain = 426.973
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Divider.v:40]
+INFO: [Synth 8-802] inferred FSM for state register 'AN_reg' in module 'Show_Number'
+WARNING: [Synth 8-6014] Unused sequential element AN_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:54]
+INFO: [Synth 8-5546] ROM "AN" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'Fsm_controller'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element AN_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:54]
+WARNING: [Synth 8-6014] Unused sequential element AN_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:54]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                         11111110
+                 iSTATE0 |                              001 |                         11111101
+                 iSTATE1 |                              010 |                         11111011
+                 iSTATE2 |                              011 |                         11110111
+                 iSTATE3 |                              100 |                         11101111
+                 iSTATE4 |                              101 |                         11011111
+                 iSTATE5 |                              110 |                         10111111
+                 iSTATE6 |                              111 |                         01111111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'AN_reg' using encoding 'sequential' in module 'Show_Number'
+WARNING: [Synth 8-6014] Unused sequential element AN_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:54]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 692.355 ; gain = 426.973
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  17 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module Show_Number 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 1     
+Module Fsm_controller 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module Adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module Selector 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Latch 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module Memory 
+Detailed RTL Component Info : 
++---Muxes : 
+	  17 Input     32 Bit        Muxes := 1     
+Module Comparator 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/imports/new/Divider.v:40]
+WARNING: [Synth 8-6014] Unused sequential element D1/L2/result_reg was removed.  [F:/OneDrive/VivadoProject/project_4/project_4.srcs/sources_1/new/Latch.v:33]
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Show1/tube_now_reg[7] )
+INFO: [Synth 8-3886] merging instance 'F1/temp_save_reg[2]' (FDRE) to 'F1/temp_save_reg[3]'
+INFO: [Synth 8-3886] merging instance 'F1/temp_save_reg[5]' (FDRE) to 'F1/temp_save_reg[1]'
+INFO: [Synth 8-3886] merging instance 'Show1/DP_reg' (FD) to 'Show1/tube_now_reg[7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Show1/tube_now_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (Show1/tube_now_reg[7]) is unused and will be removed from module Topest.
+WARNING: [Synth 8-3332] Sequential element (D1/L2/result_reg[28]) is unused and will be removed from module Topest.
+WARNING: [Synth 8-3332] Sequential element (D1/L2/result_reg[29]) is unused and will be removed from module Topest.
+WARNING: [Synth 8-3332] Sequential element (D1/L2/result_reg[30]) is unused and will be removed from module Topest.
+WARNING: [Synth 8-3332] Sequential element (D1/L2/result_reg[31]) is unused and will be removed from module Topest.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 692.355 ; gain = 426.973
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:01:12 . Memory (MB): peak = 714.809 ; gain = 449.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 716.813 ; gain = 451.430
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |   434|
+|3     |LUT1   |   223|
+|4     |LUT2   |   532|
+|5     |LUT3   |   652|
+|6     |LUT4   |   586|
+|7     |LUT5   |   390|
+|8     |LUT6   |   541|
+|9     |MUXF7  |    21|
+|10    |FDRE   |    89|
+|11    |FDSE   |     1|
+|12    |IBUF   |     4|
+|13    |OBUF   |    24|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+---------------+------+
+|      |Instance |Module         |Cells |
++------+---------+---------------+------+
+|1     |top      |               |  3499|
+|2     |  D1     |Datapath_top   |  1640|
+|3     |    A2   |Adder          |     4|
+|4     |    L2   |Latch          |  1622|
+|5     |    L3   |Latch_5        |    14|
+|6     |  F1     |Fsm_controller |    43|
+|7     |  Show1  |Show_Number    |  1400|
+|8     |    D3   |Divider        |    88|
+|9     |    D4   |Decoder_28_32  |   805|
+|10    |    P1   |pattern        |    24|
+|11    |    P2   |pattern_0      |     7|
+|12    |    P3   |pattern_1      |     7|
+|13    |    P4   |pattern_2      |     7|
+|14    |    P5   |pattern_3      |     7|
+|15    |    P8   |pattern_4      |    18|
++------+---------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 891.152 ; gain = 320.340
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 891.152 ; gain = 625.770
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 438 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+47 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 891.152 ; gain = 629.980
+INFO: [Common 17-1381] The checkpoint 'F:/OneDrive/VivadoProject/project_4/project_4.runs/synth_1/Topest.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 891.152 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  1 15:49:20 2017...

@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Adder.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Comparator.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Datapath_top.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/imports/new/Decoder_28_32.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/imports/new/Divider.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Fsm_controller.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Latch.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Memory.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Selector.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/imports/new/Show_Number.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Topest.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/imports/new/pattern.v"
+verilog xil_defaultlib  "../../../project_4.srcs/sources_1/new/Topest_tb.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

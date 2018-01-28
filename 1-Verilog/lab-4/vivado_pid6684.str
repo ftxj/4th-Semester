@@ -1,0 +1,129 @@
+/*
+
+Vivado v2017.1 (64-bit)
+SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+
+Process ID: 6684
+License: Customer
+
+Current time: 	6/22/17 8:16:39 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 16 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/win64/jre
+JVM executable location: 	C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/win64/jre/bin/java.exe
+Java library paths: C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/bin/unwrapped/win64.o;C:/Windows/Sun/Java/bin;C:/Windows/system32;C:/Windows;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/bin;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/lib/win64.o;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/win64/jre/bin/server;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/win64/jre/bin;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/ids_lite/ISE/bin/nt64;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/ids_lite/ISE/lib/nt64;C:/SoftWare/Vivado/NewInstall/Vivado_HLS/2017.1/bin;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common;C:/Users/93214/AppData/Local/Microsoft/WindowsApps;;C:/SoftWare/VScode/Install/Microsoft VS Code/bin;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/bin;C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	93214
+User home directory: C:/Users/93214
+User working directory: C:/Document/vivado各次试验/project_4
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/SoftWare/Vivado/NewInstall/Vivado
+HDI_APPROOT: C:/SoftWare/Vivado/NewInstall/Vivado/2017.1
+RDI_DATADIR: C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/data
+RDI_BINDIR: C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/bin
+
+User preferences location: C:/Users/93214/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/93214/AppData/Roaming/Xilinx/Vivado/2017.1/vivado.xml
+Vivado layouts directory: C:/Users/93214/AppData/Roaming/Xilinx/Vivado/2017.1/layouts
+PlanAhead jar location: 	C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	C:/Document/vivado各次试验/project_4/.Xil/Vivado-6684-DESKTOP-UJL55QF
+
+GUI allocated memory:	179 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 519 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 56 MB (+56212kb) [00:00:09]
+// [Engine Memory]: 455 MB (+325483kb) [00:00:09]
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Document\vivado各次试验\project_4\project_4.xpr. Version: Vivado v2017.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Document/vivado各次试验/project_4/project_4.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// [Engine Memory]: 510 MB (+33523kb) [00:00:11]
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Document/vivado各次试验/project_4/project_4.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'F:/OneDrive/VivadoProject/project_4' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 59 MB (+492kb) [00:00:13]
+// [Engine Memory]: 582 MB (+49011kb) [00:00:13]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/data/ip'. 
+// [Engine Memory]: 614 MB (+3616kb) [00:00:17]
+// HMemoryUtils.trashcanNow. Engine heap size: 614 MB. GUI used memory: 38 MB. Current time: 6/22/17 8:16:46 PM CST
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:08 . Memory (MB): peak = 843.238 ; gain = 137.934 
+// Project name: project_4; location: C:/Document/vivado各次试验/project_4; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (Adder_tb.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Adder_tb (Adder_tb.v)]", 1, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Adder_tb (Adder_tb.v)]", 1, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+selectCodeEditor("Adder_tb.v", 201, 139); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 63 MB (+657kb) [00:00:34]
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Adder_tb (Adder_tb.v)]", 1); // B:i (D:JPanel, cg:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Topest_tb (Topest_tb.v)]", 6); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Topest_tb (Topest_tb.v)]", 6); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Topest_tb (Topest_tb.v), T1 : Topest (Topest.v)]", 7, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Topest_tb (Topest_tb.v), T1 : Topest (Topest.v), D1 : Datapath_top (Datapath_top.v)]", 10, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+// [GUI Memory]: 66 MB (+164kb) [00:00:42]
+selectCodeEditor("Topest.v", 163, 85); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 72 MB (+2257kb) [00:00:47]
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// [GUI Memory]: 77 MB (+1482kb) [00:04:19]
+// Elapsed time: 252 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Topest_tb (Topest_tb.v)]", 6); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Latch_tb (Latch_tb.v)]", 3); // B:i (D:JPanel, cg:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Latch_tb (Latch_tb.v)]", 3); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Comparator_tb (Comparator_tb.v)]", 2); // B:i (D:JPanel, cg:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Comparator_tb (Comparator_tb.v)]", 2); // B:i (D:JPanel, cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 634 MB. GUI used memory: 40 MB. Current time: 6/22/17 8:21:32 PM CST
+// [GUI Memory]: 82 MB (+1342kb) [00:06:52]
+// Elapsed time: 356 seconds
+selectCodeEditor("Topest.v", 99, 124); // bI:J (JPanel:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u:M (JViewport:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u:M (JViewport:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u:M (JViewport:JComponent, cg:JFrame)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12); // u:M (JViewport:JComponent, cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design, Schematic]", 15, false); // u:M (JViewport:JComponent, cg:JFrame)
+// x:aN (cg:JFrame): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, x:aN)
+// bs:g (cg:JFrame):  Open Elaborated Design : addNotify
+// TclEventType: ELABORATE_START
+dismissDialog("Elaborate Design"); // x:aN (cg:JFrame)
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7a100tcsg324-1 Top: Topest 

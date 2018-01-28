@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jun  1 15:47:44 2017
+# Process ID: 12928
+# Current directory: F:/OneDrive/VivadoProject/project_4/project_4.runs/synth_1
+# Command line: vivado.exe -log Topest.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Topest.tcl
+# Log file: F:/OneDrive/VivadoProject/project_4/project_4.runs/synth_1/Topest.vds
+# Journal file: F:/OneDrive/VivadoProject/project_4/project_4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Topest.tcl -notrace

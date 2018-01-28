@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jun 22 20:18:38 2017
+# Process ID: 6868
+# Current directory: C:/Document/vivado各次试验/project_2.3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8820 C:\Document\vivado各次试验\project_2.3\project_2.3.xpr
+# Log file: C:/Document/vivado各次试验/project_2.3/vivado.log
+# Journal file: C:/Document/vivado各次试验/project_2.3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Document/vivado各次试验/project_2.3/project_2.3.xpr
+update_compile_order -fileset sources_1

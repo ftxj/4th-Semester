@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jun 22 20:16:13 2017
+# Process ID: 6684
+# Current directory: C:/Document/vivado各次试验/project_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2564 C:\Document\vivado各次试验\project_4\project_4.xpr
+# Log file: C:/Document/vivado各次试验/project_4/vivado.log
+# Journal file: C:/Document/vivado各次试验/project_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Document/vivado各次试验/project_4/project_4.xpr
+INFO: [Project 1-313] Project file moved from 'F:/OneDrive/VivadoProject/project_4' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/SoftWare/Vivado/NewInstall/Vivado/2017.1/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:08 . Memory (MB): peak = 843.238 ; gain = 137.934
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: Topest
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 897.059 ; gain = 47.242
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Topest' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Topest.v:23]
+INFO: [Synth 8-638] synthesizing module 'Show_Number' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:23]
+INFO: [Synth 8-638] synthesizing module 'Divider' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Divider.v:23]
+	Parameter frequency_before bound to: 100000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Divider' (1#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Divider.v:23]
+INFO: [Synth 8-638] synthesizing module 'Decoder_28_32' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Decoder_28_32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_28_32' (2#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Decoder_28_32.v:23]
+INFO: [Synth 8-638] synthesizing module 'pattern' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/pattern.v:23]
+INFO: [Synth 8-256] done synthesizing module 'pattern' (3#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/pattern.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Show_Number' (4#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/imports/new/Show_Number.v:23]
+INFO: [Synth 8-638] synthesizing module 'Fsm_controller' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:23]
+	Parameter START bound to: 4'b1000 
+	Parameter COMPUTE_SUM bound to: 4'b0100 
+	Parameter GET_NEXT bound to: 4'b0010 
+	Parameter DONE bound to: 4'b0001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:50]
+INFO: [Synth 8-256] done synthesizing module 'Fsm_controller' (5#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Fsm_controller.v:23]
+INFO: [Synth 8-638] synthesizing module 'Datapath_top' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Datapath_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'Adder' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Adder.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Adder' (6#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-638] synthesizing module 'Selector' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Selector.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Selector' (7#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Selector.v:23]
+INFO: [Synth 8-638] synthesizing module 'Latch' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Latch.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Latch' (8#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Latch.v:23]
+INFO: [Synth 8-638] synthesizing module 'Memory' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Memory.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Memory' (9#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'Comparator' [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Comparator.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Comparator' (10#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Comparator.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Datapath_top' (11#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Datapath_top.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Topest' (12#1) [C:/Document/vivado各次试验/project_4/project_4.srcs/sources_1/new/Topest.v:23]

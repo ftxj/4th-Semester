@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jun 22 20:28:34 2017
+# Process ID: 8060
+# Current directory: C:/Document/vivado各次试验/project_3/project_3.runs/synth_1
+# Command line: vivado.exe -log top3_6.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top3_6.tcl
+# Log file: C:/Document/vivado各次试验/project_3/project_3.runs/synth_1/top3_6.vds
+# Journal file: C:/Document/vivado各次试验/project_3/project_3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top3_6.tcl -notrace
